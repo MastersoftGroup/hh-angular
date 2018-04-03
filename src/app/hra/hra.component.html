@@ -1,0 +1,7 @@
+
+<div class="form-group">
+<!--  <label for="hra-demo">Rapid Address Search:</label>-->
+  <input id="hra-demo" type="text" class="form-control" [class.is-invalid]="searchFailed" [(ngModel)]="model" [ngbTypeahead]="search" placeholder="Start typing address......" />
+  <span *ngIf="searching">searching...</span>
+  <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+</div>

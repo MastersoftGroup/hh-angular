@@ -3,16 +3,29 @@ import { NgModule } from '@angular/core';
 
 
 import { AppComponent } from './app.component';
-
+import { HraComponent } from './hra/hra.component';
+// Import relevant http modules
+import { HttpClientModule, HttpClientJsonpModule } from '@angular/common/http';
+import { HhJsonpService } from './services/hh-jsonp.service';
+import { AppRoutingModule } from './app-routing.module';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HraComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    // Import relevant http modules
+    HttpClientModule,
+    HttpClientJsonpModule,
+    AppRoutingModule,
+    NgbModule.forRoot(),
   ],
-  providers: [],
+  providers: [HhJsonpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
